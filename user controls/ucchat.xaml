@@ -1,0 +1,163 @@
+<controls:UserControl
+	x:Class="Synax.User_Controls.ucChat" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Synax.User_Controls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:local1="clr-namespace:Synax.Includes.Chat_Handler"
+	Name="control"
+	Width="585"
+	Height="578" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+	Unloaded="control_Unloaded">
+	<FrameworkElement.Style>
+		<Style>
+			<Style.Triggers>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="0"
+								To="1" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Unloaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="1"
+								To="0" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<Trigger
+					Property="Visibility"
+					Value="Collapsed">
+					<Setter
+						Property="UIElement.Opacity"
+						Value="0" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</FrameworkElement.Style>
+	<Grid>
+		<ScrollViewer
+			VerticalScrollBarVisibility="Hidden"
+			HorizontalAlignment="Left"
+			Height="578"
+			VerticalAlignment="Top"
+			Width="585">
+			<Grid>
+				<Border
+					BorderThickness="1"
+					CornerRadius="20"
+					HorizontalAlignment="Left"
+					Height="548"
+					VerticalAlignment="Top"
+					Width="585"
+					Background="{DynamicResource MainBackgroundColor}">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="548"
+						VerticalAlignment="Top"
+						Width="585"
+						Margin="-1">
+						<wpf:Card
+							FrameworkElement.HorizontalAlignment="Left"
+							FrameworkElement.Margin="10,10,0,0"
+							FrameworkElement.VerticalAlignment="Top"
+							FrameworkElement.Width="35"
+							FrameworkElement.Height="32" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+							Control.Background="{x:Null}"
+							Control.Foreground="{x:Null}">
+							<wpf:PackIcon
+								FrameworkElement.HorizontalAlignment="Left"
+								PackIcon.Kind="Chat"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="32"
+								FrameworkElement.Width="35"
+								Control.Foreground="{DynamicResource IconForegroundColor}"
+								Control.FontSize="16"
+								UIElement.RenderTransformOrigin="5,1.3"
+								Control.Background="{DynamicResource SecondaryBackgroundColor}" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+						</wpf:Card>
+						<Label
+							Content="Live Chat"
+							HorizontalAlignment="Left"
+							Margin="50,10,0,0"
+							VerticalAlignment="Top"
+							Width="106"
+							Height="30"
+							FontWeight="Bold"
+							Foreground="{DynamicResource LabelHeaderColor}"
+							FontSize="18" />
+						<ScrollViewer
+							VerticalScrollBarVisibility="Hidden"
+							Margin="0,0,10,71"
+							Height="430"
+							VerticalAlignment="Bottom">
+							<StackPanel
+								Name="spMessages"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+								Width="565" />
+						</ScrollViewer>
+						<Border
+							BorderBrush="{DynamicResource SecondaryBackgroundColor}"
+							BorderThickness="1"
+							HorizontalAlignment="Left"
+							Height="40"
+							VerticalAlignment="Top"
+							Width="565"
+							Background="{DynamicResource MainBackgroundColor}"
+							Margin="10,490,0,0">
+							<Grid
+								HorizontalAlignment="Left"
+								Height="40"
+								Margin="-1"
+								VerticalAlignment="Top"
+								Width="565">
+								<TextBox
+									Name="tbMessage"
+									HintAssist.Hint="Message Content"
+									VerticalContentAlignment="Center"
+									HorizontalAlignment="Left"
+									Height="40"
+									TextWrapping="Wrap"
+									VerticalAlignment="Top"
+									Width="523"
+									Margin="37,0,0,0"
+									Foreground="{DynamicResource TextColor}"
+									Opacity="0.6"
+									FontSize="16"
+									SelectionBrush="{DynamicResource PrimaryDataColor}"
+									RenderTransformOrigin="0.5,0.5"
+									CaretBrush="{x:Null}"
+									BorderBrush="{x:Null}"
+									Background="{x:Null}"
+									KeyDown="tbMessage_KeyDown" />
+								<Card
+									FrameworkElement.HorizontalAlignment="Left"
+									FrameworkElement.VerticalAlignment="Top"
+									FrameworkElement.Height="40"
+									FrameworkElement.Width="30"
+									Control.Background="{DynamicResource ButtonBackgroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+									<PackIcon
+										PackIcon.Kind="ChatPlus"
+										FrameworkElement.HorizontalAlignment="Left"
+										FrameworkElement.VerticalAlignment="Top"
+										FrameworkElement.Height="40"
+										FrameworkElement.Width="28"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}"
+										UIElement.Opacity="0.7"
+										FrameworkElement.Margin="1,0,0,0" />
+								</Card>
+							</Grid>
+						</Border>
+					</Grid>
+				</Border>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</controls:UserControl>

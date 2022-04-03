@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B6EB1F4-AEEC-450B-B2DB-799DD45C3E30}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Synax</RootNamespace>
+    <AssemblyName>Synax</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>8192</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Synax.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialDesignThemes.Wpf" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\dnSpy-net-win64\bin\PresentationCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\dnSpy-net-win64\bin\PresentationFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="SafeGuard">
+      <HintPath>..\..\..\..\..\..\..\..\..\AppData\Local\Programs\Synax\SafeGuard.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\dnSpy-net-win64\bin\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\dnSpy-net-win64\bin\System.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>..\..\..\..\..\..\..\..\..\Downloads\dnSpy-net-win64\bin\WindowsBase.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Authentication.xaml.cs">
+      <DependentUpon>Authentication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Chat_Handler\ucRecievedChatBubble.cs" />
+    <Compile Include="Includes\Chat_Handler\ucSentChatBubble.cs" />
+    <Compile Include="Includes\Colors.cs" />
+    <Compile Include="Includes\FileHelper.cs" />
+    <Compile Include="Includes\FujiPopup\msgDanger.xaml.cs">
+      <DependentUpon>msgDanger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\FujiPopup\msgHost.xaml.cs">
+      <DependentUpon>msgHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\FujiPopup\msgInformation.xaml.cs">
+      <DependentUpon>msgInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\FujiPopup\msgSuccess.xaml.cs">
+      <DependentUpon>msgSuccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\FujiPopup\msgWarning.xaml.cs">
+      <DependentUpon>msgWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Includes\Functions.cs" />
+    <Compile Include="Includes\ThemeChanger.cs" />
+    <Compile Include="Includes\ThemeObject.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeoLocation.cs" />
+    <Compile Include="Models\UserLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SafeGuard\AppUtils.cs" />
+    <Compile Include="SafeGuard\ColorRelationShip.cs" />
+    <Compile Include="SafeGuard\LevelInformation.cs" />
+    <Compile Include="SafeGuard\LoadObject.cs" />
+    <Compile Include="SafeGuard\Method.cs" />
+    <Compile Include="SafeGuard\MethodInfo2.cs" />
+    <Compile Include="SafeGuard\MethodStats.cs" />
+    <Compile Include="SafeGuard\NewsObject.cs" />
+    <Compile Include="SafeGuard\PanelConfig.cs" />
+    <Compile Include="SafeGuard\ProgramInformation.cs" />
+    <Compile Include="SafeGuard\ResponseInformation.cs" />
+    <Compile Include="SafeGuard\SafeCheck.cs" />
+    <Compile Include="SafeGuard\SafeGuardAttackInfo.cs" />
+    <Compile Include="SafeGuard\SafeGuardTitle.cs" />
+    <Compile Include="SafeGuard\StorageInformation.cs" />
+    <Compile Include="SafeGuard\SynaxMethods.cs" />
+    <Compile Include="SafeGuard\Update.cs" />
+    <Compile Include="SafeGuard\UserStorageObject.cs" />
+    <Compile Include="SafeGuard\VPNObject.cs" />
+    <Compile Include="SafeGuard\WhitelistObject.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="SettingsModel.cs" />
+    <Compile Include="User_Controls\ucAttackHub.cs" />
+    <Compile Include="User_Controls\ucChat.cs" />
+    <Compile Include="User_Controls\ucDashboard.cs" />
+    <Compile Include="User_Controls\ucSettings.cs" />
+    <Compile Include="User_Controls\ucTools.cs" />
+    <Compile Include="User_Controls\ucUserLogger.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Authentication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="includes\chat handler\ucrecievedchatbubble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="includes\chat handler\ucsentchatbubble.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Includes\FujiPopup\msgDanger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Includes\FujiPopup\msgHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Includes\FujiPopup\msgInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Includes\FujiPopup\msgSuccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Includes\FujiPopup\msgWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\ucattackhub.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\ucchat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\ucdashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\ucsettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\uctools.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="user controls\ucuserlogger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo (2).ico" />
+    <Resource Include="logo (2).jpg" />
+    <Resource Include="logo-removebg-preview (1).ico" />
+    <Resource Include="logo-removebg-preview (1).jpg" />
+    <Resource Include="output-onlinepngtools.png" />
+    <Resource Include="px.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

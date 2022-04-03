@@ -1,0 +1,163 @@
+<controls:UserControl
+	x:Class="Synax.Includes.FujiPopup.msgWarning" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Synax.Includes.FujiPopup" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	Width="467"
+	Height="127.288" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework">
+	<FrameworkElement.Style>
+		<Style>
+			<Style.Triggers>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="0"
+								To="1" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<Trigger
+					Property="Visibility"
+					Value="Collapsed">
+					<Setter
+						Property="UIElement.Opacity"
+						Value="0" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</FrameworkElement.Style>
+	<Grid>
+		<Border
+			CornerRadius="15"
+			Margin="10"
+			Background="{DynamicResource MainBackgroundColor}">
+			<UIElement.Effect>
+				<DropShadowEffect
+					BlurRadius="15"
+					Direction="-90"
+					RenderingBias="Quality"
+					ShadowDepth="2" />
+			</UIElement.Effect>
+			<Grid>
+				<UIElement.Clip>
+					<RectangleGeometry
+						Rect="0,0,447,107"
+						RadiusX="15"
+						RadiusY="15" />
+				</UIElement.Clip>
+				<Polygon
+					Points="80,50 77,80 150,82 80,50 0,0"
+					StrokeThickness="3"
+					Fill="{DynamicResource SecondaryBackgroundColor}"
+					Margin="258,-29,20,15"
+					RenderTransformOrigin="0.5,0.5">
+					<UIElement.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform />
+							<SkewTransform />
+							<RotateTransform
+								Angle="38.739" />
+							<TranslateTransform />
+						</TransformGroup>
+					</UIElement.RenderTransform>
+				</Polygon>
+				<Polygon
+					Points="80,50 77,80 150,82 80,50 0,0"
+					StrokeThickness="3"
+					Fill="{DynamicResource SecondaryBackgroundColor}"
+					Margin="109,-12,189,18"
+					RenderTransformOrigin="0.5,0.5">
+					<UIElement.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform />
+							<SkewTransform />
+							<RotateTransform
+								Angle="112.043" />
+							<TranslateTransform />
+						</TransformGroup>
+					</UIElement.RenderTransform>
+				</Polygon>
+				<Grid
+					HorizontalAlignment="Left"
+					Height="98"
+					Margin="370,-44,-87,0"
+					VerticalAlignment="Top"
+					Width="164"
+					RenderTransformOrigin="0.5,0.5"
+					Background="{DynamicResource SecondaryBackgroundColor}">
+					<UIElement.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform />
+							<SkewTransform />
+							<RotateTransform
+								Angle="45.189" />
+							<TranslateTransform />
+						</TransformGroup>
+					</UIElement.RenderTransform>
+				</Grid>
+				<Button
+					HorizontalAlignment="Left"
+					Margin="401,0,-6,0"
+					VerticalAlignment="Top"
+					Width="52"
+					Foreground="{DynamicResource ButtonForegroundColor}"
+					Height="38"
+					FontSize="16"
+					Visibility="Hidden"
+					BorderBrush="{x:Null}"
+					Background="{x:Null}"
+					Click="close">
+					<ContentControl.Content>
+						<wpf:PackIconExtension
+							PackIconExtension.Kind="Close"
+							PackIconExtension.Size="20" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+					</ContentControl.Content>
+				</Button>
+				<Grid
+					HorizontalAlignment="Left"
+					Height="100"
+					Margin="-102,87,0,-80"
+					VerticalAlignment="Top"
+					Width="146"
+					RenderTransformOrigin="0.5,0.5"
+					Background="{DynamicResource SecondaryBackgroundColor}">
+					<UIElement.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform />
+							<SkewTransform />
+							<RotateTransform
+								Angle="99.128" />
+							<TranslateTransform />
+						</TransformGroup>
+					</UIElement.RenderTransform>
+				</Grid>
+				<Label
+					Name="lbTitle"
+					Content="Title"
+					HorizontalContentAlignment="Left"
+					VerticalAlignment="Top"
+					Height="44"
+					Width="362"
+					Foreground="{DynamicResource WarningColor}"
+					FontFamily="Roboto Light"
+					FontSize="24"
+					Margin="14,7,71,0"
+					Background="{x:Null}"
+					BorderBrush="{x:Null}" />
+				<TextBlock
+					Name="tbMessage"
+					HorizontalAlignment="Left"
+					Margin="21,40,0,0"
+					TextWrapping="Wrap"
+					Text="Message Content"
+					VerticalAlignment="Top"
+					Height="57"
+					Width="388"
+					Foreground="#FFFFFFFF"
+					FontSize="18"
+					FontFamily="Roboto Light" />
+			</Grid>
+		</Border>
+	</Grid>
+</controls:UserControl>

@@ -1,0 +1,554 @@
+<controls:UserControl
+	x:Class="Synax.User_Controls.ucTools" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Synax.User_Controls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	Width="585"
+	Height="578" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework">
+	<Grid>
+		<ScrollViewer
+			VerticalScrollBarVisibility="Hidden"
+			HorizontalAlignment="Left"
+			Height="578"
+			VerticalAlignment="Top"
+			Width="585">
+			<Grid
+				HorizontalAlignment="Left"
+				Height="578"
+				VerticalAlignment="Top"
+				Width="585">
+				<Border
+					BorderThickness="1"
+					CornerRadius="20"
+					HorizontalAlignment="Left"
+					Height="253"
+					VerticalAlignment="Top"
+					Width="585"
+					Background="#FF192039">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="253"
+						VerticalAlignment="Top"
+						Width="585"
+						Margin="-1">
+						<wpf:Card
+							FrameworkElement.HorizontalAlignment="Left"
+							FrameworkElement.Margin="10,10,0,0"
+							FrameworkElement.VerticalAlignment="Top"
+							FrameworkElement.Width="35"
+							FrameworkElement.Height="32" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+							Control.Background="{x:Null}">
+							<wpf:PackIcon
+								FrameworkElement.HorizontalAlignment="Left"
+								PackIcon.Kind="Target"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="32"
+								FrameworkElement.Width="35"
+								Control.Foreground="#FFEEC34A"
+								Control.FontSize="16"
+								UIElement.RenderTransformOrigin="5,1.3"
+								Control.Background="#FF080E22" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+						</wpf:Card>
+						<Label
+							Content="Port Scanner"
+							HorizontalAlignment="Left"
+							Margin="50,10,0,0"
+							VerticalAlignment="Top"
+							Width="120"
+							Height="30"
+							FontWeight="Bold"
+							Foreground="{DynamicResource LabelHeaderColor}"
+							FontSize="18" />
+						<Grid
+							Name="tabPort"
+							HorizontalAlignment="Left"
+							Margin="10,53,0,0"
+							Width="565">
+							<Card
+								Control.Background="{DynamicResource MainBackgroundColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.Margin="300,18,0,0"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Width="265"
+								FrameworkElement.Height="87" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Grid
+									HorizontalAlignment="Left"
+									Height="87"
+									VerticalAlignment="Top"
+									Width="265" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Open Ports"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="96" />
+									<Label
+										Name="lblOpen"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="163,0,0,0"
+										Width="97" />
+									<Grid
+										Background="{DynamicResource SecondaryBackgroundColor}"
+										HorizontalAlignment="Left"
+										Height="28"
+										Margin="0,30,0,0"
+										VerticalAlignment="Top"
+										Width="265" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Closed Ports"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="104"
+										Margin="0,29,0,0" />
+									<Label
+										Name="lblClosed"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="163,29,0,0"
+										Width="97" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Time Between Ports"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="158"
+										Margin="0,58,0,0" />
+									<Label
+										Name="lblWaitTime"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="163,58,0,0"
+										Width="97" />
+								</Grid>
+							</Card>
+							<TextBox
+								Name="tbStartPort"
+								ToolTip="Ex: 1 ( Start port )"
+								HorizontalContentAlignment="Center"
+								Foreground="#FFEEC34A"
+								BorderBrush="#FFEEC34A"
+								HorizontalAlignment="Left"
+								Height="33"
+								Margin="155,28,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="140"
+								Opacity="0.8"
+								FontSize="14"
+								Background="#FF080E22" />
+							<TextBox
+								Name="tbEndPort"
+								ToolTip="Ex: 65535 ( End port )"
+								HorizontalContentAlignment="Center"
+								Foreground="#FFEEC34A"
+								BorderBrush="#FFEEC34A"
+								HorizontalAlignment="Left"
+								Height="33"
+								Margin="155,70,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="140"
+								Opacity="0.8"
+								FontSize="14"
+								Background="#FF080E22" />
+							<DataGrid
+								Name="dgOpenPorts"
+								HorizontalScrollBarVisibility="Hidden"
+								VerticalScrollBarVisibility="Hidden"
+								HorizontalAlignment="Center"
+								Height="90"
+								VerticalAlignment="Top"
+								Width="84"
+								FontSize="14"
+								FontWeight="Bold"
+								CanUserReorderColumns="False"
+								Margin="300,106,181,0"
+								RenderTransformOrigin="0.5,0.5"
+								Foreground="{DynamicResource TextColor}"
+								Background="{x:Null}"
+								BorderBrush="{x:Null}">
+								<UIElement.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform />
+										<SkewTransform
+											AngleY="0.127" />
+										<RotateTransform />
+										<TranslateTransform
+											Y="0.331" />
+									</TransformGroup>
+								</UIElement.RenderTransform>
+								<DataGrid.Columns>
+									<DataGridTextColumn
+										Width="100"
+										Binding="{Binding Port, Mode=OneWay}"
+										ClipboardContentBinding="{x:Null}" />
+								</DataGrid.Columns>
+							</DataGrid>
+							<Card
+								Control.Background="{DynamicResource PrimaryDataColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="37"
+								FrameworkElement.Width="140"
+								FrameworkElement.Margin="10,24,0,0"
+								Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Label
+									HorizontalContentAlignment="Center"
+									Foreground="{DynamicResource LabelHeaderColor}"
+									Content="Start Port"
+									HorizontalAlignment="Left"
+									Margin="0,4,0,0"
+									VerticalAlignment="Top"
+									FontWeight="Bold"
+									FontSize="16"
+									Width="140" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+							</Card>
+							<Card
+								Control.Background="{DynamicResource PrimaryDataColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="37"
+								FrameworkElement.Width="140"
+								FrameworkElement.Margin="10,66,0,0"
+								Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Label
+									HorizontalContentAlignment="Center"
+									Foreground="{DynamicResource LabelHeaderColor}"
+									Content="End Port"
+									HorizontalAlignment="Left"
+									Margin="0,4,0,0"
+									VerticalAlignment="Top"
+									FontWeight="Bold"
+									FontSize="16"
+									Width="140" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+							</Card>
+							<Card
+								Control.Background="{DynamicResource PrimaryDataColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="37"
+								FrameworkElement.Width="140"
+								FrameworkElement.Margin="10,108,0,0"
+								Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Label
+									HorizontalContentAlignment="Center"
+									Foreground="{DynamicResource LabelHeaderColor}"
+									Content="Wait Time"
+									HorizontalAlignment="Left"
+									Margin="0,4,0,0"
+									VerticalAlignment="Top"
+									FontWeight="Bold"
+									FontSize="16"
+									Width="140" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+							</Card>
+							<TextBox
+								Name="tbWaitTime"
+								ToolTip="Ex: 5"
+								HorizontalContentAlignment="Center"
+								Foreground="#FFEEC34A"
+								BorderBrush="#FFEEC34A"
+								HorizontalAlignment="Left"
+								Height="33"
+								Margin="155,112,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="140"
+								Opacity="0.8"
+								FontSize="14"
+								Background="#FF080E22" />
+							<Card
+								Control.Background="{DynamicResource PrimaryDataColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="37"
+								FrameworkElement.Width="84"
+								FrameworkElement.Margin="300,107,0,0"
+								Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Label
+									HorizontalContentAlignment="Center"
+									Foreground="{DynamicResource LabelHeaderColor}"
+									Content="Open"
+									HorizontalAlignment="Left"
+									Margin="0,4,0,0"
+									VerticalAlignment="Top"
+									FontWeight="Bold"
+									FontSize="16"
+									Width="84" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+							</Card>
+							<Button
+								Name="btnScan"
+								Background="#FFEEC34A"
+								Foreground="#FF080E22"
+								Content="Scan Ports Start/Stop"
+								HorizontalAlignment="Left"
+								Margin="10,151,0,0"
+								VerticalAlignment="Top"
+								Width="285"
+								Height="37"
+								BorderBrush="{x:Null}"
+								Click="btnScan_Click" />
+							<TextBlock
+								Foreground="{DynamicResource LabelLowerColor}"
+								HorizontalAlignment="Left"
+								Margin="389,110,0,0"
+								TextWrapping="Wrap"
+								Text="The wait time is the time in between each port being checked. For servers use a higher wait time and for homes use a lower one for a faster scan."
+								VerticalAlignment="Top"
+								Width="176"
+								Height="90" />
+							<TextBox
+								Name="tbTarget"
+								ToolTip="Ex: 1.1.1.1"
+								HorizontalContentAlignment="Center"
+								Foreground="#FFEEC34A"
+								BorderBrush="#FFEEC34A"
+								HorizontalAlignment="Left"
+								Height="28"
+								Margin="10,-10,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="555"
+								Opacity="0.8"
+								FontSize="14"
+								Background="#FF080E22" />
+						</Grid>
+					</Grid>
+				</Border>
+				<Border
+					BorderThickness="1"
+					CornerRadius="20"
+					HorizontalAlignment="Left"
+					Height="233"
+					VerticalAlignment="Top"
+					Width="585"
+					Margin="0,258,0,0"
+					Background="#FF192039">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="253"
+						VerticalAlignment="Top"
+						Width="585"
+						Margin="-1">
+						<Card
+							FrameworkElement.HorizontalAlignment="Left"
+							FrameworkElement.Margin="10,10,0,0"
+							FrameworkElement.VerticalAlignment="Top"
+							FrameworkElement.Width="35"
+							FrameworkElement.Height="32"
+							Control.Background="{DynamicResource SecondaryBackgroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+							<PackIcon
+								FrameworkElement.HorizontalAlignment="Left"
+								PackIcon.Kind="Globe"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Height="32"
+								FrameworkElement.Width="35"
+								Control.Foreground="#FFEEC34A"
+								Control.FontSize="16"
+								UIElement.RenderTransformOrigin="5,1.3"
+								Control.Background="#FF080E22" />
+						</Card>
+						<Label
+							Content="GEO Location"
+							HorizontalAlignment="Left"
+							Margin="50,10,0,0"
+							VerticalAlignment="Top"
+							Width="120"
+							Height="30"
+							FontWeight="Bold"
+							Foreground="{DynamicResource LabelHeaderColor}"
+							FontSize="18" />
+						<Grid
+							Name="tabPort1"
+							HorizontalAlignment="Left"
+							Margin="10,53,0,0"
+							Width="565">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="506*" />
+								<ColumnDefinition
+									Width="59*" />
+							</Grid.ColumnDefinitions>
+							<TextBox
+								Name="tbGeoTarget"
+								ToolTip="Ex: 1.1.1.1"
+								HorizontalContentAlignment="Center"
+								Foreground="#FFEEC34A"
+								BorderBrush="#FFEEC34A"
+								HorizontalAlignment="Left"
+								Height="28"
+								Margin="10,-10,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="380"
+								Opacity="0.8"
+								FontSize="14"
+								Background="#FF080E22" />
+							<Button
+								Name="btnTrack"
+								Background="#FFD4191C"
+								Foreground="{DynamicResource ButtonForegroundColor}"
+								Content="Track Host"
+								HorizontalAlignment="Left"
+								Margin="395,-19,0,0"
+								VerticalAlignment="Top"
+								Width="170"
+								Height="37"
+								Grid.ColumnSpan="2"
+								BorderBrush="{x:Null}"
+								Click="btnTrack_Click" />
+							<Card
+								Control.Background="{DynamicResource MainBackgroundColor}"
+								FrameworkElement.HorizontalAlignment="Left"
+								FrameworkElement.Margin="10,20,0,0"
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Width="555"
+								FrameworkElement.Height="148"
+								Grid.ColumnSpan="2" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+								<Grid
+									HorizontalAlignment="Left"
+									Height="148"
+									VerticalAlignment="Top"
+									Width="555" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Provider"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="73"
+										Margin="2,0,0,0" />
+									<Label
+										Name="lblProvider"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="118,0,0,0"
+										Width="432" />
+									<Grid
+										Background="{DynamicResource SecondaryBackgroundColor}"
+										HorizontalAlignment="Left"
+										Height="28"
+										Margin="0,30,0,0"
+										VerticalAlignment="Top"
+										Width="555" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Country"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="73"
+										Margin="2,29,0,0" />
+									<Label
+										Name="lblCountry"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="118,29,0,0"
+										Width="432" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Timezone"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="90"
+										Margin="2,59,0,0" />
+									<Label
+										Name="lblProxy"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="118,59,0,0"
+										Width="432" />
+									<Grid
+										Background="{DynamicResource SecondaryBackgroundColor}"
+										HorizontalAlignment="Left"
+										Height="28"
+										Margin="0,89,0,0"
+										VerticalAlignment="Top"
+										Width="555" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Cordinates"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="90"
+										Margin="2,88,0,0" />
+									<Label
+										Name="lblCoordinates"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="118,88,0,0"
+										Width="432" />
+									<Label
+										Foreground="{DynamicResource LabelHeaderColor}"
+										Content="Main City"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Width="90"
+										Margin="2,118,0,0" />
+									<Label
+										Name="lblRisk"
+										Foreground="#FFEEC34A"
+										HorizontalContentAlignment="Right"
+										Content="N/a"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Top"
+										FontWeight="Bold"
+										FontSize="16"
+										Margin="118,118,0,0"
+										Width="432" />
+								</Grid>
+							</Card>
+						</Grid>
+					</Grid>
+				</Border>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</controls:UserControl>

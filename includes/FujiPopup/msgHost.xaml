@@ -1,0 +1,16 @@
+<windows:Window
+	x:Class="Synax.Includes.FujiPopup.msgHost" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Synax.Includes.FujiPopup"
+	Title="FujiPopup"
+	Height="902.409"
+	Width="475"
+	AllowsTransparency="True"
+	ResizeMode="NoResize"
+	WindowStyle="None"
+	ShowInTaskbar="False" xmlns:windows="clr-namespace:System.Windows;assembly=PresentationFramework"
+	Background="{x:Null}"
+	Loaded="wdFuji_Loaded"
+	Deactivated="wdFuji_Deactivated">
+	<StackPanel
+		Name="spNotifications"
+		VerticalAlignment="Bottom" />
+</windows:Window>

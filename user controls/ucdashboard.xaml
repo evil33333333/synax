@@ -1,0 +1,553 @@
+<controls:UserControl
+	x:Class="Synax.User_Controls.ucDashboard" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Synax.User_Controls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	Width="585"
+	Height="578" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type TextBox}"
+				BasedOn="{StaticResource MaterialDesignTextBox}"
+				x:Key="TextBox">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource TextColor}" />
+				<Setter
+					Property="TextBoxBase.CaretBrush"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Property="wpf:HintAssist.Foreground"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Property="wpf:TextFieldAssist.UnderlineBrush"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter
+					Property="VerticalContentAlignment"
+					Value="Center" />
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<FrameworkElement.Style>
+		<Style>
+			<Style.Triggers>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="0"
+								To="1" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Unloaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="1"
+								To="0" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<Trigger
+					Property="Visibility"
+					Value="Collapsed">
+					<Setter
+						Property="UIElement.Opacity"
+						Value="0" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</FrameworkElement.Style>
+	<Grid>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="106"
+			VerticalAlignment="Top"
+			Width="268"
+			Background="#FF192039"
+			Margin="18,15,0,0">
+			<Grid>
+				<wpf:Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Control.Background="{x:Null}">
+					<wpf:PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="ServerNetwork"
+						FrameworkElement.VerticalAlignment="Bottom"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+				</wpf:Card>
+				<Label
+					Name="serversound"
+					Content="Total Servers"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="246"
+					Control.Background="#FF080E22"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="245" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="serverinfo"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="236"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="16"
+							Margin="5,3,4,0" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="106"
+			VerticalAlignment="Top"
+			Width="268"
+			Margin="296,15,0,0"
+			Background="#FF192039">
+			<Grid>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="Trophy"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="Top Method"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="246"
+					Control.Background="#FF080E22"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="245" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="topmethodname"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="236"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="16"
+							Margin="5,3,4,0" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="106"
+			VerticalAlignment="Top"
+			Width="268"
+			Background="{DynamicResource SecondaryBackgroundColor}"
+			Margin="18,131,0,0">
+			<Grid
+				Background="#FF192039">
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="Layers"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="App Version"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="246"
+					Control.Background="{DynamicResource MainBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="245" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="appversion"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="236"
+							Height="31"
+							FontSize="16"
+							Margin="5,3,4,0"
+							Background="#FF080E22"
+							Foreground="#FFEEC34A" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="106"
+			VerticalAlignment="Top"
+			Width="268"
+			Background="#FF192039"
+			Margin="296,130,0,0">
+			<Grid
+				Margin="0,2,0,-2">
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="Equalizer"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="Method Count"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="246"
+					Control.Background="{DynamicResource MainBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="245" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="methodcount"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="236"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="16"
+							Margin="5,3,4,0"
+							Background="#FF080E22" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="139"
+			VerticalAlignment="Top"
+			Width="548"
+			Background="#FF192039"
+			Margin="18,366,0,0">
+			<Grid>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="Discord"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="Owner"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Image
+					Name="discordBanner"
+					HorizontalAlignment="Left"
+					Height="75"
+					VerticalAlignment="Top"
+					Width="407"
+					Margin="111,42,0,0"
+					Source="https://discord.c99.nl/widget/theme-3/549880424122417163.png"
+					IsEnabled="False" />
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="106"
+			VerticalAlignment="Top"
+			Width="546"
+			Background="{DynamicResource SecondaryBackgroundColor}"
+			Margin="18,247,0,0">
+			<Grid
+				Background="#FF192039">
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="400,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="130"
+					Control.Background="{DynamicResource MainBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="132"
+						Margin="-1,0"
+						Background="#FF080E22" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="19*" />
+							<RowDefinition
+								Height="18*" />
+						</Grid.RowDefinitions>
+						<Label
+							Name="appversionss"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Width="122"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="16"
+							Margin="0,3,5,0"
+							Grid.RowSpan="2" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="290,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="102"
+					Control.Background="{DynamicResource MainBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="132"
+						Margin="-31,0,0,0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="dsafdfdsfsd"
+							Content="Concurrents"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Width="101"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="16"
+							Margin="0,3,-3,0"
+							Background="#FF080E22" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="InfoCircle"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="Account Information"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="200"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="99,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="159"
+					Control.Background="{DynamicResource MainBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="203"
+						Margin="1,0,0,0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="maxtime"
+							Content="N/a"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="158"
+							Height="32"
+							Foreground="#FFEEC34A"
+							FontSize="14"
+							Margin="3,5,42,-1"
+							Background="#FF080E22" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="13,50,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="38"
+					FrameworkElement.Width="78"
+					Control.Background="#FF080E22"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="124"
+						Margin="-15,0,-31,0" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Name="appversionkkk"
+							Content="Max Time"
+							HorizontalContentAlignment="Left"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Top"
+							Width="85"
+							Height="31"
+							Foreground="#FFEEC34A"
+							FontSize="14"
+							Margin="18,4,21,0" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+	</Grid>
+</controls:UserControl>

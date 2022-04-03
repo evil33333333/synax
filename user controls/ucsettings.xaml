@@ -1,0 +1,1509 @@
+<controls:UserControl
+	x:Class="Synax.User_Controls.ucSettings" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Synax.User_Controls" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+	Width="585"
+	Height="578" xmlns:controls="clr-namespace:System.Windows.Controls;assembly=PresentationFramework">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type TextBox}"
+				BasedOn="{StaticResource MaterialDesignTextBox}"
+				x:Key="TextBox">
+				<Setter
+					Property="Foreground"
+					Value="{DynamicResource TextColor}" />
+				<Setter
+					Property="TextBoxBase.CaretBrush"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Property="wpf:HintAssist.Foreground"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Property="wpf:TextFieldAssist.UnderlineBrush"
+					Value="{DynamicResource PrimaryDataColor}" />
+				<Setter
+					Property="VerticalContentAlignment"
+					Value="Center" />
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<FrameworkElement.Style>
+		<Style>
+			<Style.Triggers>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Loaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="0"
+								To="1" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<EventTrigger
+					RoutedEvent="FrameworkElement.Unloaded">
+					<BeginStoryboard>
+						<Storyboard>
+							<DoubleAnimation
+								Storyboard.TargetProperty="Opacity"
+								Duration="00:00:00.5"
+								From="1"
+								To="0" />
+						</Storyboard>
+					</BeginStoryboard>
+				</EventTrigger>
+				<Trigger
+					Property="Visibility"
+					Value="Collapsed">
+					<Setter
+						Property="UIElement.Opacity"
+						Value="0" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</FrameworkElement.Style>
+	<Grid>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="502"
+			VerticalAlignment="Top"
+			Width="295"
+			Background="#FF192039">
+			<Grid>
+				<wpf:Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,249,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="121"
+					FrameworkElement.Width="273"
+					Control.Background="#FF080E22" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+					Control.Foreground="{x:Null}">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="132"
+						VerticalAlignment="Top"
+						Width="273">
+						<Label
+							Content="User"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="74"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,2,0,0" />
+						<Label
+							Name="userlbl"
+							Content="N/a"
+							VerticalContentAlignment="Center"
+							Opacity="0.6"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="183"
+							Height="36"
+							Foreground="#FFEEC34A"
+							FontSize="14"
+							Margin="85,2,0,0" />
+						<Label
+							Content="Email"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="74"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,41,0,0" />
+						<Label
+							Name="userPlan"
+							Content="N/a"
+							VerticalContentAlignment="Center"
+							Opacity="0.6"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="183"
+							Height="36"
+							Foreground="#FFEEC34A"
+							FontSize="14"
+							Margin="85,41,0,0" />
+						<Label
+							Content="Expiry"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="74"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,81,0,0" />
+						<Label
+							Name="userExpirationDate"
+							Content="N/a"
+							VerticalContentAlignment="Center"
+							Opacity="0.6"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="183"
+							Height="36"
+							Foreground="#FFEEC34A"
+							FontSize="14"
+							Margin="85,81,0,0" />
+					</Grid>
+				</wpf:Card>
+				<wpf:PackIcon
+					FrameworkElement.HorizontalAlignment="Left"
+					PackIcon.Kind="User"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Height="32"
+					FrameworkElement.Width="35"
+					Control.Foreground="#FFEEC34A"
+					Control.FontSize="16"
+					UIElement.RenderTransformOrigin="5,1.3"
+					Control.Background="#FF080E22"
+					FrameworkElement.Margin="11,212,0,0" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="Gear"
+						FrameworkElement.VerticalAlignment="Bottom"
+						FrameworkElement.Height="32"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="General Settings"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="149"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Label
+					Content="My Account"
+					HorizontalAlignment="Left"
+					Margin="50,211,0,0"
+					VerticalAlignment="Top"
+					Width="171"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,55,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="36"
+					FrameworkElement.Width="273"
+					Control.Background="{DynamicResource SecondaryBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="273"
+						Background="#FF080E22" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Content="Auto Login"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="100"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,-2,0,0" />
+						<ToggleButton
+							Name="tgAutoLogin"
+							Background="#FFEEC34A"
+							Margin="215,0,0,0"
+							BorderBrush="#FFEEC34A"
+							Foreground="#FFEEC34A"
+							Checked="tgAutoLogin_Checked"
+							MouseLeftButtonDown="tgAutoLogin_MouseLeftButtonDown"
+							Click="tgAutoLogin_Click" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,96,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="36"
+					FrameworkElement.Width="273"
+					Control.Background="{DynamicResource SecondaryBackgroundColor}"
+					UIElement.Visibility="Hidden"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="273" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Content="Custom Background"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="152"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,-2,0,0" />
+						<ToggleButton
+							Background="{DynamicResource PrimaryDataColor}"
+							Margin="215,0,0,0"
+							BorderBrush="{DynamicResource PrimaryDataColor}"
+							Foreground="{DynamicResource PrimaryDataColor}" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,96,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="36"
+					FrameworkElement.Width="273"
+					Control.Background="{DynamicResource SecondaryBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="273"
+						Background="#FF080E22" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Content="Manage Logs"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="108"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,-2,0,0" />
+						<ComboBox
+							Name="cbLogManagement"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							p13:HintAssist.Hint="Select a option"
+							Margin="153,0,0,0"
+							VerticalAlignment="Top"
+							Width="114"
+							Height="36"
+							BorderBrush="{DynamicResource MainBackgroundColor}"
+							Foreground="#FFEEC34A"
+							SelectionChanged="cbLogManagement_SelectionChanged" xmlns:p13="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+					</Grid>
+				</Card>
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,137,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					UIElement.RenderTransformOrigin="5.8,0.417"
+					FrameworkElement.Height="36"
+					FrameworkElement.Width="273"
+					Control.Background="{DynamicResource SecondaryBackgroundColor}"
+					Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<Grid
+						HorizontalAlignment="Left"
+						Height="36"
+						VerticalAlignment="Top"
+						Width="273"
+						Background="#FF080E22" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+						<Label
+							Content="Manage Theme"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Width="119"
+							Height="36"
+							Foreground="{DynamicResource LabelLowerColor}"
+							FontSize="16"
+							Margin="4,-2,0,0" />
+						<ComboBox
+							Name="cbThemeOptions"
+							HorizontalContentAlignment="Center"
+							VerticalContentAlignment="Center"
+							HorizontalAlignment="Left"
+							p13:HintAssist.Hint="Select a option"
+							Margin="153,0,0,0"
+							VerticalAlignment="Top"
+							Width="114"
+							Height="36"
+							BorderBrush="{DynamicResource MainBackgroundColor}"
+							Foreground="#FFEEC34A"
+							SelectionChanged="cbThemeOptions_SelectionChanged" xmlns:p13="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+					</Grid>
+				</Card>
+			</Grid>
+		</Border>
+		<Border
+			BorderThickness="1"
+			CornerRadius="20"
+			HorizontalAlignment="Left"
+			Height="502"
+			VerticalAlignment="Top"
+			Width="285"
+			Background="#FF192039"
+			Margin="300,0,0,0">
+			<Grid
+				Margin="0,0,0,-4">
+				<Card
+					FrameworkElement.HorizontalAlignment="Left"
+					FrameworkElement.Margin="10,10,0,0"
+					FrameworkElement.VerticalAlignment="Top"
+					FrameworkElement.Width="35"
+					FrameworkElement.Height="32"
+					Control.Background="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+					<PackIcon
+						FrameworkElement.HorizontalAlignment="Left"
+						PackIcon.Kind="ColorLens"
+						FrameworkElement.VerticalAlignment="Stretch"
+						FrameworkElement.Height="Auto"
+						FrameworkElement.Width="35"
+						Control.Foreground="#FFEEC34A"
+						Control.FontSize="16"
+						UIElement.RenderTransformOrigin="5,1.3"
+						Control.Background="#FF080E22" />
+				</Card>
+				<Label
+					Content="Theme Settings"
+					HorizontalAlignment="Left"
+					Margin="50,10,0,0"
+					VerticalAlignment="Top"
+					Width="149"
+					Height="32"
+					FontWeight="Bold"
+					Foreground="{DynamicResource LabelHeaderColor}"
+					FontSize="18" />
+				<Grid
+					Name="gridPreset"
+					HorizontalAlignment="Left"
+					Height="185"
+					Margin="10,47,0,0"
+					VerticalAlignment="Top"
+					Width="263">
+					<ScrollViewer
+						HorizontalAlignment="Left"
+						Height="442"
+						VerticalAlignment="Top"
+						Width="263"
+						Margin="0,0,0,-257"
+						Foreground="#FF080E22"
+						Background="#FF080E22">
+						<StackPanel
+							Height="878"
+							Width="263">
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<wpf:ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource TitleColor}" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+									Control.Foreground="{x:Null}" />
+								<Label
+									Content="Title Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnTitleColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Foreground="{DynamicResource ButtonForegroundColor}"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LabelHeaderColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Label Header Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLabelHeaderColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LabelLowerColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Label Lower Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLabelLowerColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource PrimaryDataColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Primary Data Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnPrimaryDataColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource HeaderDarkerColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Darker Header Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnDarkerHeaderColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource TextColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Text Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnTextColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource IconForegroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Icon Forground Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnIconForgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource IconBackgroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Icon Background Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnIconBackgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource ButtonForegroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Button Forground Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnButtonForgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource ButtonBackgroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Button Background Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnBackgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource GridBackgroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Grid Background Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnGridBackgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource MainBackgroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Main Background Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnMainBackgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource SecondaryBackgroundColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Main-2 Background Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnMain2BackgroundColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource HeaderColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Header Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnHeaderColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource SidebarColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Sidebar Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnSidebarColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LightSuccessColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Light Success Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLightSuccessColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource SuccessColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Success Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnSuccessColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource DarkSuccessColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Dark Success Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnDarkSuccessColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LightDangerColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Light Danger Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLightDangerColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource DangerColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Danager Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnDangerColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource DarkDangerColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Dark Danger Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnDarkerDangerColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LightInfoColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Light Info Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLightInfoColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource InfoColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Info Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnInfoColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource DarkInfoColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Dark Info Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnDarkInfoColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,0"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource LightWarningColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Light Warning Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnLightWarningColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+							<Grid
+								Margin="0,5"
+								Height="26">
+								<ColorZone
+									FrameworkElement.Height="26"
+									FrameworkElement.Width="26"
+									FrameworkElement.HorizontalAlignment="Left"
+									ColorZone.CornerRadius="5"
+									Control.Background="{DynamicResource WarningColor}"
+									Control.Foreground="{x:Null}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								<Label
+									Content="Warning Color"
+									HorizontalAlignment="Left"
+									Margin="29,0,0,0"
+									VerticalAlignment="Top"
+									Width="166"
+									Height="26"
+									Foreground="{DynamicResource LabelLowerColor}"
+									FontWeight="Bold" />
+								<Button
+									Name="btnWarningColor"
+									ToolTip="Edit Color"
+									Width="44"
+									Height="26"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Top"
+									Background="{DynamicResource ButtonBackgroundColor}"
+									BorderBrush="{DynamicResource ButtonBackgroundColor}"
+									Margin="0,0,19,0"
+									Click="EditColor">
+									<PackIcon
+										PackIcon.Kind="Edit"
+										FrameworkElement.Height="26"
+										FrameworkElement.HorizontalAlignment="Center"
+										FrameworkElement.VerticalAlignment="Center"
+										Control.Foreground="{DynamicResource ButtonForegroundColor}" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+								</Button>
+							</Grid>
+						</StackPanel>
+					</ScrollViewer>
+				</Grid>
+			</Grid>
+		</Border>
+		<Grid
+			Name="pnlPopup"
+			HorizontalAlignment="Left"
+			Height="578"
+			VerticalAlignment="Top"
+			Width="585"
+			Visibility="Hidden">
+			<Grid
+				Background="#FF040404"
+				Opacity="0.5" />
+			<Border
+				Name="bColorEditor"
+				Height="250"
+				Width="500"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				Background="{DynamicResource GridBackgroundColor}"
+				CornerRadius="5">
+				<StackPanel
+					Orientation="Vertical"
+					Margin="15">
+					<Grid>
+						<Border
+							Height="30"
+							Width="30"
+							HorizontalAlignment="Left"
+							Background="{DynamicResource IconBackgroundColor}"
+							CornerRadius="4"
+							BorderThickness="1">
+							<PackIcon
+								PackIcon.Kind="Eyedropper"
+								FrameworkElement.Height="26"
+								FrameworkElement.Width="24"
+								FrameworkElement.HorizontalAlignment="Center"
+								FrameworkElement.VerticalAlignment="Center"
+								Control.Foreground="{DynamicResource IconForegroundColor}"
+								UIElement.Opacity="0.9"
+								FrameworkElement.Margin="2,1" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+						</Border>
+						<Label
+							Content="Color Editor"
+							Height="35"
+							Width="135"
+							HorizontalAlignment="Left"
+							HorizontalContentAlignment="Left"
+							VerticalContentAlignment="Center"
+							FontWeight="Bold"
+							FontSize="16"
+							Foreground="{DynamicResource LabelHeaderColor}"
+							Margin="35,0,0,0" />
+						<Button
+							Height="35"
+							Width="35"
+							HorizontalAlignment="Right"
+							Style="{StaticResource MaterialDesignIconButton}"
+							Foreground="{DynamicResource PrimaryDataColor}"
+							Click="ClosePopup">
+							<ContentControl.Content>
+								<wpf:PackIconExtension
+									PackIconExtension.Kind="Close"
+									PackIconExtension.Size="28" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+							</ContentControl.Content>
+						</Button>
+					</Grid>
+					<StackPanel
+						Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						Margin="0,5">
+						<ColorZone
+							ColorZone.Name="colorZone"
+							FrameworkElement.Height="26"
+							FrameworkElement.Width="26"
+							FrameworkElement.HorizontalAlignment="Left"
+							Control.Background="#FFFFFFFF"
+							ColorZone.CornerRadius="5"
+							x:Name="colorZone" xmlns="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+						<TextBox
+							Name="tbCustomColor"
+							Margin="7,0"
+							Style="{DynamicResource TextBox}"
+							p13:HintAssist.Hint="#FFF"
+							Width="175"
+							TextChanged="tbCustomColor_TextChanged" xmlns:p13="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" />
+						<Label
+							Name="lblColorName"
+							Content="Color Name"
+							HorizontalAlignment="Left"
+							FontWeight="Medium"
+							FontSize="14"
+							Foreground="#FFFFFFFF"
+							Margin="5,0,0,0" />
+					</StackPanel>
+					<wpf:ColorPicker
+						ColorPicker.Name="colorPicker"
+						FrameworkElement.Height="150" xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+						x:Name="colorPicker"
+						MouseUp="ChangeColor" />
+				</StackPanel>
+			</Border>
+		</Grid>
+	</Grid>
+</controls:UserControl>
